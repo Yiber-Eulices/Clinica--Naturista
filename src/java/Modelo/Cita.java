@@ -15,7 +15,7 @@ import java.util.Date;
 public class Cita {
     private int idcita;
     private Date fecha;
-    private Date hora;
+    private String hora;
     private String estado;
     private String observaciones;
     private Persona iddoctor;
@@ -39,15 +39,14 @@ public class Cita {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
-    
 
     public String getEstado() {
         return estado;

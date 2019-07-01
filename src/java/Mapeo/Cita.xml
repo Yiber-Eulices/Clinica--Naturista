@@ -7,7 +7,7 @@
             <generator class="identity" />
         </id>
             <property name="fecha" type="date" column="fecha" />
-            <property name="hora" type="time" column="hora" />
+            <property name="hora" type="string" column="hora" />
             <property name="estado" type="string" column="estado" />
             <property name="observaciones" type="string" column="Observaciones" />
             <many-to-one name="iddoctor" class="Modelo.Persona" fetch="select" >
