@@ -40,8 +40,8 @@
         <td><%=cit.getIdlugar().getNombre()%></td>
         
          <td>
-        <button type="submit" onclick="js:window.location.href='cita.do?a=update&id=<%=cit.getIdcita()%>'">Actualizar</button> </td>
-    <td><button type="submit" onclick="js:window.location.href='cita.do?a=delete&id=<%=cit.getIdcita()%>'">Eliminar</button> </td>
+        <button type="submit" onclick="js:window.location.href='Cita.do?a=update&id=<%=cit.getIdcita()%>'">Actualizar</button> </td>
+    <td><button type="submit" onclick="js:window.location.href='Cita.do?a=delete&id=<%=cit.getIdcita()%>'">Eliminar</button> </td>
         
     </tr>
     <%}%>

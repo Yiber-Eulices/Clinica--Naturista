@@ -32,8 +32,8 @@
     <td><%=esp.getDescripcion()%></td>
     
     <td>
-        <button type="submit" onclick="js:window.location.href='especialidad.do?a=update&id=<%=esp.getIdespecialidad()%>'">Actualizar</button> </td>
-    <td><button type="submit" onclick="js:window.location.href='especialidad.do?a=delete&id=<%=esp.getIdespecialidad()%>'">Eliminar</button> </td>
+        <button type="submit" onclick="js:window.location.href='Especialidad.do?a=update&id=<%=esp.getIdespecialidad()%>'">Actualizar</button> </td>
+    <td><button type="submit" onclick="js:window.location.href='Especialidad.do?a=delete&id=<%=esp.getIdespecialidad()%>'">Eliminar</button> </td>
         
     
     </tr>
