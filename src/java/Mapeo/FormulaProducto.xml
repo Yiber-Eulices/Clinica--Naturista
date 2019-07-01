@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Modelo.FormulaProducto" table="formula_producto">
+        <id column="id_formula_producto" name="idformproducto" type="java.lang.Integer">
+            <generator class="identity"/>
+        </id>
+        <property name="cantidad" type="integer">
+            <column name="cantidad" not-null="true"/>
+        </property>
+        <property name="dosis" type="string">
+            <column name="dosis" not-null="true"/>
+        </property>
+        <property name="precioUnitario" type="double">
+            <column name="precio_unitario" not-null="true"/>
+        </property> 
+        <property name="iva" type="double">
+            <column name="iva" not-null="true"/>
+        </property>  
+        <many-to-one name="idformula" class="Modelo.Formula" fetch="select">
+            <column name="formula_idformula" not-null="true"/>
+        </many-to-one>
+         <many-to-one name="idproducto" class="Modelo.Medicamento" fetch="select">
+            <column name="id_producto" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
