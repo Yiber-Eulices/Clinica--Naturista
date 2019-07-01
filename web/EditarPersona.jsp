@@ -3,7 +3,7 @@
 <% Persona prsn = (Persona)request.getAttribute("EditarPersona");%>
 <div class="content">
 <!-- Animated -->
-<form action="Persona.do?a=create" method="post" >
+<form action="Persona.do?a=update&id=<%=prsn.getIdpersona()%>" method="post" >
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
@@ -104,22 +104,26 @@
                             </div>
                             <small class="form-text text-muted">ex. Mm8$&80Wb-</small>
                         </div>
-                        <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">* Rol :</strong>
+                        <%if (session.getAttribute("Perfil").equals("paciente")){%>
+                        <input type="hidden" value="Paciente" name="txtRol">
+                        <%} else {%>
+                            <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">* Rol :</strong>
+                                </div>
+                                <div class="card-body">
+                                    <%if (session.getAttribute("Perfil").equals("administrador")){%>
+                                        <label class="switch switch-default switch-primary-outline switch-pill mr-2"><input  class="switch-input" type="radio" value="Administrador" name="txtRol"> Administrador<span class="switch-label"></span> <span class="switch-handle"></span></label>
+                                    
+                                    <label class="switch switch-default switch-secondary-outline switch-pill mr-2"><input  class="switch-input" type="radio" value="Medico" name="txtRol"> Medico <span class="switch-label"></span> <span class="switch-handle"></span></label>
+                                    <%} else if (session.getAttribute("Perfil").equals("medico")){%>
+                                    <label class="switch switch-default switch-success-outline switch-pill mr-2"><input  class="switch-input" checked="true"type="radio" value="Paciente" name="txtRol"> Paciente<span class="switch-label"></span> <span class="switch-handle"></span></label>
+                                    <%}%>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <label class="switch switch-default switch-primary-outline switch-pill mr-2"><input  class="switch-input" type="radio" value="Administrador" name="txtRol"> Administrador<span class="switch-label"></span> <span class="switch-handle"></span></label>
-
-                                <label class="switch switch-default switch-secondary-outline switch-pill mr-2"><input  class="switch-input" type="radio" value="Medico" name="txtRol"> Medico <span class="switch-label"></span> <span class="switch-handle"></span></label>
-
-                                <label class="switch switch-default switch-success-outline switch-pill mr-2"><input  class="switch-input" checked="true"type="radio" value="Paciente" name="txtRol"> Paciente<span class="switch-label"></span> <span class="switch-handle"></span></label>
-
-
-                            </div>
-                        </div>
-                        </div><!--/.col-->
+                            </div><!--/.col-->
+                        <%}%>
                         <div class="card">
                         <div class="card-header">
                             <strong>Acciones</strong>                                    
@@ -127,7 +131,7 @@
                         <div class="card-body">
                             <input type="submit" class="btn btn-outline-primary" value="Guardar">
                             <input type="reset" class="btn btn-outline-danger" value="Limpiar">
-                            <a class="btn btn-outline-warning" href="#" role="button">Cancelar</a>
+                            <a class="btn btn-outline-warning" href="Home.jsp" role="button">Cancelar</a>
                         </div>
                     </div><!-- /# card -->
                     </div>
