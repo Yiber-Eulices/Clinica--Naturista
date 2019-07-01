@@ -78,25 +78,6 @@
                                 <div class="col-12 col-md-9"><input type="file" id="file-input" name="txtFoto" class="form-control-file" onchange="return Validaext()"></div>
                                  <small class="form-text text-muted">ex. C:\User\Documents\Photo.jsp</small>
                         </div>
-                        <script type="text/javascript">
-                            function Validaext() {
-                                var archivoInput = document.getElementById('file-input');
-                                var archivoRuta = file-input.value;
-                                var extPermitidas = /()$/i;
-                                
-                                if (extPermitidas.exec(archivoRuta)){
-                                    alert('Selecciona una imagen.');
-                                    archivoInput.value='';
-                                    return false;
-                                }else{
-                                    if (archivoInput.files &&  archivoInput.files[0]){
-                                        alert('Selecciona una imagen.');
-                                        archivoInput.value='';
-                                        return false;
-                                    }
-                                }
-                            }
-                        </script>
                         <div class="form-group">
                             <label class=" form-control-label">* Telefono :</label>
                             <div class="input-group">
