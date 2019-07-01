@@ -1,5 +1,5 @@
-HttpSession sesionC = request.getSession();
-sesion.invalidate();
+<%HttpSession sesionC = request.getSession();
+sesionC.invalidate();%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -52,10 +52,6 @@ sesion.invalidate();
                             <label>
                                 <input type="checkbox"> Remember Me
                             </label>
-                            <label class="pull-right">
-                                <a href="#">Forgotten Password?</a>
-                            </label>
-
                         </div>
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
                         <div class="register-link m-t-15 text-center">

@@ -75,7 +75,7 @@
                         </div>
                         <div class="row form-group">
                                 <div class="col col-md-3"><label for="file-input" class=" form-control-label">Foto :</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="file-input" name="txtFoto" class="form-control-file"></div>
+                                <div class="col-12 col-md-9"><input type="file" id="file-input" name="txtFoto" class="form-control-file" onchange="return Validaext()"></div>
                                  <small class="form-text text-muted">ex. C:\User\Documents\Photo.jsp</small>
                         </div>
                         <script type="text/javascript">
@@ -90,10 +90,10 @@
                                     return false;
                                 }else{
                                     if (archivoInput.files &&  archivoInput.files[0]){
-                                    alert('Selecciona una imagen.');
-                                    archivoInput.value='';
-                                    return false;
-                                }
+                                        alert('Selecciona una imagen.');
+                                        archivoInput.value='';
+                                        return false;
+                                    }
                                 }
                             }
                         </script>
