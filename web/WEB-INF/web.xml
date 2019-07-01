@@ -20,6 +20,14 @@
         <servlet-name>controllerLugarAtencion</servlet-name>
         <servlet-class>Controlador.controllerLugarAtencion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controllerCita</servlet-name>
+        <servlet-class>Controlador.controllerCita</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>controllerEspecialidad</servlet-name>
+        <servlet-class>Controlador.controllerEspecialidad</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>controllerPersona</servlet-name>
         <url-pattern>/Persona.do</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>controllerLugarAtencion</servlet-name>
         <url-pattern>/LugarAtencion.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controllerCita</servlet-name>
+        <url-pattern>/Cita.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controllerEspecialidad</servlet-name>
+        <url-pattern>/Especialidad.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
