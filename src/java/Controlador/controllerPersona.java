@@ -123,8 +123,24 @@ public class controllerPersona extends HttpServlet {
             sesion.saveOrUpdate(per);
             sesion.getTransaction().commit();
             sesion.close();
-            admin(request,response);        
-        }else{
+            
+            HttpSession sesionUser = request.getSession();            
+                admin(request, response);
+            /*if (sesionUser.getAttribute("Perfil").equals("paciente")){
+                try{
+                    request.getRequestDispatcher("Home.jsp").include(request, response);        
+                }catch(ServletException | IOException ex){
+                    System.out.println("Error en registrar:"+ex.getMessage());
+                }
+            } else if ( (sesionUser.getAttribute("Perfil").equals("medico") && sesionUser.getAttribute("UsuarioId").equals(request.getParameter("id")))
+                        || (sesionUser.getAttribute("Perfil").equals("medico") && sesionUser.getAttribute("UsuarioId").equals(request.getParameter("id")))) {
+                
+            }*/
+            
+{
+                
+            }
+        }else{            
             request.setAttribute("EditarPersona",per);        
             try{
                 request.getRequestDispatcher("EditarPersona.jsp").forward(request, response);        

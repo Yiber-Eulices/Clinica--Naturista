@@ -95,25 +95,48 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Listas</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="Cita.do?a=admin">Tabla de Citas</a></li>
-                            <li><i class="fa fa-table"></i><a href="Especialidad.do?a=admin">Tabla de Especialidades</a></li>
-                            <li><i class="fa fa-table"></i><a href="Formula.do?a=admin">Tabla de Formula</a></li>
-                            <li><i class="fa fa-table"></i><a href="FormulaProducto.do?a=admin">Tabla de Formula Medicamento</a></li>
-                            <li><i class="fa fa-table"></i><a href="LugarAtencion.do?a=admin">Tabla de Lugares de Atencion</a></li>
-                            <li><i class="fa fa-table"></i><a href="Medicamento.do?a=admin">Tabla de Medicamentos</a></li>
-                            <li><i class="fa fa-table"></i><a href="Persona.do?a=admin">Tabla de Personas</a></li>
+                            <% if (session.getAttribute("Perfil").equals("paciente")){%>                                
+                                <li><i class="fa fa-table"></i><a href="Especialidad.do?a=admin">Tabla de Especialidades</a></li>
+                                <li><i class="fa fa-table"></i><a href="LugarAtencion.do?a=admin">Tabla de Lugares de Atencion</a></li>
+                                <li><i class="fa fa-table"></i><a href="Medicamento.do?a=admin">Tabla de Medicamentos</a></li>
+                            <%} else if (session.getAttribute("Perfil").equals("medico")){%>
+                                <li><i class="fa fa-table"></i><a href="Cita.do?a=admin">Tabla de Citas</a></li>
+                                <li><i class="fa fa-table"></i><a href="Especialidad.do?a=admin">Tabla de Especialidades</a></li>
+                                <li><i class="fa fa-table"></i><a href="Formula.do?a=admin">Tabla de Formula</a></li>
+                                <li><i class="fa fa-table"></i><a href="FormulaProducto.do?a=admin">Tabla de Formula Medicamento</a></li>
+                                <li><i class="fa fa-table"></i><a href="LugarAtencion.do?a=admin">Tabla de Lugares de Atencion</a></li>
+                                <li><i class="fa fa-table"></i><a href="Medicamento.do?a=admin">Tabla de Medicamentos</a></li>
+                                <li><i class="fa fa-table"></i><a href="Persona.do?a=admin">Tabla de Personas</a></li>
+                            <%} else if (session.getAttribute("Perfil").equals("administrador")){%>
+                                <li><i class="fa fa-table"></i><a href="Cita.do?a=admin">Tabla de Citas</a></li>
+                                <li><i class="fa fa-table"></i><a href="Especialidad.do?a=admin">Tabla de Especialidades</a></li>
+                                <li><i class="fa fa-table"></i><a href="Formula.do?a=admin">Tabla de Formula</a></li>
+                                <li><i class="fa fa-table"></i><a href="FormulaProducto.do?a=admin">Tabla de Formula Medicamento</a></li>
+                                <li><i class="fa fa-table"></i><a href="LugarAtencion.do?a=admin">Tabla de Lugares de Atencion</a></li>
+                                <li><i class="fa fa-table"></i><a href="Medicamento.do?a=admin">Tabla de Medicamentos</a></li>
+                                <li><i class="fa fa-table"></i><a href="Persona.do?a=admin">Tabla de Personas</a></li>
+                            <%}%>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Formularios</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="Cita.do?a=create">Registrar Citas</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="Especialidad.do?a=create">Registrar Especialidades</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="Formula.do?a=create">Registrar Formulas</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="FormulaProducto.do?a=create">Registrar Formula Medicamento</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="LugarAtencion.do?a=create">Registrar Lugares de Atencion</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="Medicamento.do?a=create">Registrar de Medicamentos</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="Persona.do?a=create">Registrar Personas</a></li>
+                            <% if (session.getAttribute("Perfil").equals("paciente")){%> 
+                                <li><i class="menu-icon fa fa-th"></i><a href="Cita.do?a=create">Registrar Citas</a></li>
+                            <%} else if (session.getAttribute("Perfil").equals("medico")){%>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Cita.do?a=create">Registrar Citas</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Formula.do?a=create">Registrar Formulas</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="FormulaProducto.do?a=create">Registrar Formula Medicamento</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Persona.do?a=create">Registrar Personas</a></li>
+                            <%} else if (session.getAttribute("Perfil").equals("administrador")){%>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Cita.do?a=create">Registrar Citas</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Especialidad.do?a=create">Registrar Especialidades</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Formula.do?a=create">Registrar Formulas</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="FormulaProducto.do?a=create">Registrar Formula Medicamento</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="LugarAtencion.do?a=create">Registrar Lugares de Atencion</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Medicamento.do?a=create">Registrar de Medicamentos</a></li>
+                                <li><i class="menu-icon fa fa-th"></i><a href="Persona.do?a=create">Registrar Personas</a></li>
+                            <%}%>
                         </ul>
                     </li>
 
