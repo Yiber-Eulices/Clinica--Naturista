@@ -29,24 +29,21 @@
                                 <%
                                 ArrayList<Persona> personas = (ArrayList)request.getAttribute("Per");
                                 for (Persona prs :personas){%>
-                                <tr>
-                                    <td>
+                                <td>
                                     <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar"><br>
                                     <%=prs.getNombre() %></td>
-                                    <td><%=prs.getApellido() %></td>
-                                    <td><%=prs.getDocumentid() %></td>
-                                    <td><%=prs.getGenero() %></td>
-                                    <td><%=prs.getRh() %></td>
-                                    <td><%=prs.getFechaNacimiento() %></td>
-                                    <td><%=prs.getRol() %></td>
-                                    <td><%=prs.getTelefono() %></td>
-                                    <td><%=prs.getCorreo() %></td>
-                                    <td><div class="card-body">
-                                            <a href="Persona.do?a=update&id=<%=prs.getIdpersona()%>">Editar</a>
-                                            <a href="Persona.do?a=delete&id=<%=prs.getIdpersona()%>">Eliminar</a>
-                                    </div></td>
-                                </tr>
-                                
+                                <td><%=prs.getApellido() %></td>
+                                <td><%=prs.getDocumentid() %></td>
+                                <td><%=prs.getGenero() %></td>
+                                <td><%=prs.getRh() %></td>
+                                <td><%=prs.getFechaNacimiento() %></td>
+                                <td><%=prs.getRol() %></td>
+                                <td><%=prs.getTelefono() %></td>
+                                <td><%=prs.getCorreo() %></td>
+                                <td><div class="card-body">
+                                        <a href="Persona.do?a=update&id=<%=prs.getIdpersona()%>">Editar</a>
+                                        <a href="Persona.do?a=delete&id=<%=prs.getIdpersona()%>">Eliminar</a>
+                                </div></td>
                                 <%}%>
                             </tbody>
                         </table>

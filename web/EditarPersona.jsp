@@ -116,9 +116,9 @@
                                     <%if (session.getAttribute("Perfil").equals("administrador")){%>
                                         <label class="switch switch-default switch-primary-outline switch-pill mr-2"><input  class="switch-input" type="radio" value="Administrador" name="txtRol"> Administrador<span class="switch-label"></span> <span class="switch-handle"></span></label>
                                     
-                                        <label class="switch switch-default switch-secondary-outline switch-pill mr-2"><input  class="switch-input" type="radio" value="Medico" name="txtRol"> Medico <span class="switch-label"></span> <span class="switch-handle"></span></label>
+                                    <label class="switch switch-default switch-secondary-outline switch-pill mr-2"><input  class="switch-input" type="radio" value="Medico" name="txtRol"> Medico <span class="switch-label"></span> <span class="switch-handle"></span></label>
                                     <%} else if (session.getAttribute("Perfil").equals("medico")){%>
-                                        <label class="switch switch-default switch-success-outline switch-pill mr-2"><input  class="switch-input" checked="true"type="radio" value="Paciente" name="txtRol"> Paciente<span class="switch-label"></span> <span class="switch-handle"></span></label>
+                                    <label class="switch switch-default switch-success-outline switch-pill mr-2"><input  class="switch-input" checked="true"type="radio" value="Paciente" name="txtRol"> Paciente<span class="switch-label"></span> <span class="switch-handle"></span></label>
                                     <%}%>
                                 </div>
                             </div>

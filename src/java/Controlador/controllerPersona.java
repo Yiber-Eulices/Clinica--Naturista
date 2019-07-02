@@ -53,10 +53,7 @@ public class controllerPersona extends HttpServlet {
                 break;
             case"update":
                 update(request,response);
-                break; 
-            case"MyProfile":
-                MyProfile(request,response);
-                break;                
+                break;    
             case "delete":
                 delete(request,response);
                 break;    
@@ -122,10 +119,27 @@ public class controllerPersona extends HttpServlet {
             per.setPassword(getMD5(request.getParameter("txtPassword")));
             per.setRol(request.getParameter("txtRol"));
             sesion.beginTransaction();
+            sesion.beginTransaction();
             sesion.saveOrUpdate(per);
             sesion.getTransaction().commit();
-            sesion.close();        
-            admin(request, response);
+            sesion.close();
+            
+            HttpSession sesionUser = request.getSession();            
+                admin(request, response);
+            /*if (sesionUser.getAttribute("Perfil").equals("paciente")){
+                try{
+                    request.getRequestDispatcher("Home.jsp").include(request, response);        
+                }catch(ServletException | IOException ex){
+                    System.out.println("Error en registrar:"+ex.getMessage());
+                }
+            } else if ( (sesionUser.getAttribute("Perfil").equals("medico") && sesionUser.getAttribute("UsuarioId").equals(request.getParameter("id")))
+                        || (sesionUser.getAttribute("Perfil").equals("medico") && sesionUser.getAttribute("UsuarioId").equals(request.getParameter("id")))) {
+                
+            }*/
+            
+{
+                
+            }
         }else{            
             request.setAttribute("EditarPersona",per);        
             try{
@@ -134,46 +148,7 @@ public class controllerPersona extends HttpServlet {
                 System.out.println("Error en registrar:"+ex.getMessage());
             }
         }        
-    }
-    private void MyProfile(HttpServletRequest request, HttpServletResponse response){        
-        Session sesion=HibernateUtil.getSessionFactory().openSession();        
-        int id =Integer.parseInt(request.getParameter("id"));        
-        Persona per=(Persona) sesion.get(Persona.class,id);        
-        if(request.getMethod().equalsIgnoreCase("POST")){        
-            per.setDocumentid(request.getParameter("txtDocumentid"));
-            per.setNombre(request.getParameter("txtNombre"));
-            per.setApellido(request.getParameter("txtApellido"));            
-            per.setTelefono(request.getParameter("txtTelefono"));
-            Date Fn;
-            try{
-            Fn=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("txtFechaNacimiento"));
-             per.setFechaNacimiento(Fn);
-            }catch (ParseException ex){
-                
-            }per.setGenero(request.getParameter("txtGenero"));
-            per.setRh(request.getParameter("txtRh"));
-            per.setFoto(request.getParameter("txtFoto"));
-            per.setCorreo(request.getParameter("txtCorreo"));
-            per.setPassword(getMD5(request.getParameter("txtPassword")));
-            per.setRol(request.getParameter("txtRol"));
-            sesion.beginTransaction();
-            sesion.saveOrUpdate(per);
-            sesion.getTransaction().commit();
-            sesion.close();        
-            try{
-                request.getRequestDispatcher("Home.jsp").forward(request, response);        
-            }catch(ServletException | IOException ex){
-                System.out.println("Error en registrar:"+ex.getMessage());
-            }
-        }else{            
-            request.setAttribute("EditarPersona",per);        
-            try{
-                request.getRequestDispatcher("MyProfile.jsp").forward(request, response);        
-            }catch(ServletException | IOException ex){
-                System.out.println("Error en registrar:"+ex.getMessage());
-            }
-        }        
-    }      
+    }     
     private void delete(HttpServletRequest request, HttpServletResponse response){
         Session sesion=HibernateUtil.getSessionFactory().openSession();        
         int id =Integer.parseInt(request.getParameter("id"));        
