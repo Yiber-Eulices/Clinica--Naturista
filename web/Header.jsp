@@ -39,6 +39,10 @@
     <script src="js/es.js" type="text/javascript"></script><!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+    
+    <link href="css/bootstrap-clockpicker.css" rel="stylesheet" type="text/css"/>
+    <script src="js/bootstrap-clockpicker.js" type="text/javascript"></script>
+    
     <link href="css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
    <style>
     #weatherWidget .currentDesc {
@@ -90,8 +94,10 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-calendar"></i>Mi agenda</a>
                         <ul class="sub-menu children dropdown-menu">                            
-                            <li><i class="fa fa-calendar"></i><a href="Calendar.jsp">Mis citas</a></li>
-                            <li><i class="fa fa-calendar"></i><a href="Calendar.jsp">Mi agenda de Atencion</a></li>
+                            <li><i class="fa fa-calendar"></i><a href="Cita.do?a=MisCitas">Mis citas</a></li>
+                            <%if (session.getAttribute("Perfil").equals("medico")){%>
+                                <li><i class="fa fa-calendar"></i><a href="Cita.do?a=MiAgendaPaciente">Mi agenda de Atencion</a></li>
+                            <%}%>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">

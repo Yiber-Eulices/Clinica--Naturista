@@ -54,7 +54,13 @@ public class controllerCita extends HttpServlet {
             case "admin":
                admin(request, response);
                break;
-                
+            case "MisCitas":
+               misCitas(request, response);
+               break;
+            case "MiAgendaPaciente":
+               MiAgendaPaciente(request, response);
+               break;
+            
         }
     }
 
@@ -255,7 +261,36 @@ public class controllerCita extends HttpServlet {
         sesion.getTransaction().commit();
         admin(request, response);
     }
-
+    private void misCitas(HttpServletRequest request, HttpServletResponse response) {
+        Session sesion = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
+        ArrayList data = (ArrayList) sesion.createQuery("From Cita").list();
+        
+        ArrayList<Cita> lista = new ArrayList();
+        for(Object obj: data){
+            lista.add((Cita)obj);
+        }
+        request.setAttribute("ListaCita", lista);
+        try{
+            request.getRequestDispatcher("MisCitas.jsp").forward(request, response);
+        }catch(ServletException | IOException ex){
+            System.out.println("Error al registrar cita " + ex.getMessage());
+        }
+    }
+    private void MiAgendaPaciente(HttpServletRequest request, HttpServletResponse response) {
+        Session sesion = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
+        ArrayList data = (ArrayList) sesion.createQuery("From Cita").list();
+        
+        ArrayList<Cita> lista = new ArrayList();
+        for(Object obj: data){
+            lista.add((Cita)obj);
+        }
+        request.setAttribute("ListaCita", lista);
+        try{
+            request.getRequestDispatcher("MiAgendaCitasPacientes.jsp").forward(request, response);
+        }catch(ServletException | IOException ex){
+            System.out.println("Error al registrar cita " + ex.getMessage());
+        }
+    }
     private void admin(HttpServletRequest request, HttpServletResponse response) {
         Session sesion = HibernateUtil.HibernateUtil.getSessionFactory().openSession();
         ArrayList data = (ArrayList) sesion.createQuery("From Cita").list();

@@ -17,7 +17,7 @@
                     <div class="card-body card-block">
                         
                         Cita:
-                <select name="cmbCita">
+                <select name="cmbCita" required="required">
                     <option value=""> Seleccione </option>
                     <% ArrayList<Cita> cita = (ArrayList) request.getAttribute("Cita");%>
                     <% for(Cita cta : cita){ %>

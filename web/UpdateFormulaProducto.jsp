@@ -1,34 +1,29 @@
-<%-- 
-    Document   : UpdateFormulaProducto
-    Created on : 29/06/2019, 08:29:44 PM
-    Author     : Asus
---%>
-
 <%@page import="Modelo.FormulaProducto"%>
 <%@page import="Modelo.Medicamento"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Formula"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+<%@page import="Modelo.Especialidad"%>
+<%@page import="Modelo.LugarAtencion"%>
+<%@page import="Modelo.Persona"%>
+<%@page import="java.util.ArrayList"%>
+<%@include file="Header.jsp" %>
+<div class="content">
+<!-- Animated -->
+
+    <div class="animated fadeIn">
+        <div class="row">
         <h1>Hello World!</h1>
          <form action="formproduc.do?a=update" method="post">
              <%FormulaProducto fp = (FormulaProducto)request.getAttribute("ediFP");%>
             <label>Cantidad: </label>
-            <input type="text" name="cantidad" value="<%=fp.getCantidad()%>"/>
+            <input type="text" name="cantidad" required="required" value="<%=fp.getCantidad()%>"/>
             <label>Precio Unitario: </label>
-            <input type="text" name="precioUnitario" value="<%=fp.getPrecioUnitario()%>"/>
+            <input type="text" name="precioUnitario" required="required" value="<%=fp.getPrecioUnitario()%>"/>
             <label>Iva: </label>
-            <input type="text" name="iva" value="<%=fp.getIva()%>"/>
+            <input type="text" name="iva" required="required" value="<%=fp.getIva()%>"/>
             <label>Dosis: </label>
-            <input type="text" name="dosis" value="<%=fp.getDosis()%>"/>
+            <input type="text" name="dosis" required="required" value="<%=fp.getDosis()%>"/>
             <label>Formula: </label>
-            <select name="formula">
+            <select name="formula" required="required">
                 <option value=""></option>
                 <%ArrayList<Formula> formu = (ArrayList)request.getAttribute("formula");%>
                 <%for(Formula fml : formu){%>
@@ -36,7 +31,7 @@
                 <%}%>
             </select>
             <label>Medicamento: </label>
-            <select name="medicamento">
+            <select name="medicamento" required="required">
                 <option value=""></option>
                 <%ArrayList<Medicamento> med = (ArrayList)request.getAttribute("medicamento");%>
                 <%for(Medicamento medi : med){%>
@@ -45,5 +40,7 @@
             </select>
             <button type="submit">Update</button>
         </form>
-    </body>
-</html>
+        </div>
+    </div>
+
+<%@include file="Footer.jsp" %>

@@ -1,28 +1,25 @@
-<%-- 
-    Document   : CrearEspecialidad
-    Created on : 28-jun-2019, 0:38:58
-    Author     : ADMIN
---%>
+<%@page import="Modelo.Especialidad"%>
+<%@page import="Modelo.LugarAtencion"%>
+<%@page import="Modelo.Persona"%>
+<%@page import="java.util.ArrayList"%>
+<%@include file="Header.jsp" %>
+<div class="content">
+<!-- Animated -->
 
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+    <div class="animated fadeIn">
+        <div class="row">
         <h1>Registrar Especialidad</h1>
         <hr>
         <form action="especialidad.do?a=create" method="post">
             <label>Nombre</label><br/><br/>
-            <input type="text" name="txtnombre" placeholder="Nombre" /><br/><br/>
+            <input type="text" required="required" name="txtnombre" placeholder="Nombre" /><br/><br/>
             <label>Descripcion</label><br/><br/>
-            <input type="text" name="txtdescripcion" placeholder="Descripcion" /><br/><br/>
+            <input type="text" required="required" name="txtdescripcion" placeholder="Descripcion" /><br/><br/>
             <hr>
             <button type="submit">Registrar</button>
         </form>
         
-    </body>
-</html>
+    </div>
+    </div>
+
+<%@include file="Footer.jsp" %>

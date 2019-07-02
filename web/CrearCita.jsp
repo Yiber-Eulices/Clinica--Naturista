@@ -1,37 +1,30 @@
-<%-- 
-    Document   : CrearCita
-    Created on : 28-jun-2019, 15:50:18
-    Author     : ADMIN
---%>
-
-<%@page import="Modelo.LugarAtencion"%>
 <%@page import="Modelo.Especialidad"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.LugarAtencion"%>
 <%@page import="Modelo.Persona"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Regitrar Cita</h1><hr>
-        <form action="cita.do?a=create" method="post">
+<%@page import="java.util.ArrayList"%>
+<%@include file="Header.jsp" %>
+<div class="content">
+<!-- Animated -->
+
+    <div class="animated fadeIn">
+        <div class="row">
+             <h1>Regitrar Cita</h1><hr>
+        <form action="Cita.do?a=create" method="post">
             <label>Fecha</label><br/><br/>
-            <input type="text" name="txtfecha" placeholder="Fecha cita" /><br/><br/>
+            <input type="date" name="txtfecha" required="required" placeholder="Fecha cita" /><br/><br/>
             <label>Hora</label><br/><br/>
-            <input type="text" name="txthora" placeholder="Hora cita" /><br/><br/>
-            <input type="text" name="txtobservaciones" placeholder="Descripcion" /><br/><br/>
+            <div class="input-group clockpicker" data-autoclose="true" ><input type="text" name="txthora" placeholder="Hora cita" /><br/><br/></div>
             
-            <select name="txtestado">
+            <input type="text" name="txtobservaciones" required="required" placeholder="Descripcion" /><br/><br/>
+            
+            <select name="txtestado" required="required">
                 <option>Seleccione</option>
                 <option>Activo</option>
                 <option>Atendido</option>
              
             </select>
             
-            <select name="doctor">
+            <select name="doctor" required="required">
                 <option value="">Seleccione</option>
             <% ArrayList<Persona> doc = (ArrayList) request.getAttribute("listaDoctor"); %>
                 <% for(Persona doct: doc) {%>
@@ -39,7 +32,7 @@
                 <%}%>
             </select>
             
-            <select name="paciente">
+            <select name="paciente" required="required">
                <option value="">Seleccione</option>
                 <% ArrayList<Persona> paci = (ArrayList) request.getAttribute("listaPaciente"); %>
                 <% for(Persona pac: paci) {%>
@@ -48,7 +41,7 @@
 
             </select>
                 
-            <select name="especialidad">
+            <select name="especialidad" required="required">
               <option value="">Seleccione</option>
                 <% ArrayList<Especialidad> esp = (ArrayList) request.getAttribute("listaEspecialidad"); %>
                 <% for(Especialidad espe: esp) {%>
@@ -56,7 +49,7 @@
                 <%}%>
             </select>
             
-            <select name="lugar">
+            <select name="lugar" required="required">
                 <option value="">Seleccione</option>
                 <% ArrayList<LugarAtencion> lug = (ArrayList) request.getAttribute("listaLugar"); %>
                 <% for(LugarAtencion lugar: lug) {%>
@@ -65,6 +58,11 @@
             </select>
             
              <button type="submit" >Registrar</button>
-        </form>
-    </body>
-</html>
+             </form>
+        </div>
+    </div>
+<script>
+    $('.clockpicker').clockpicker();
+</script>
+<%@include file="Footer.jsp" %>
+
