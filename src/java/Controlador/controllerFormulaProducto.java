@@ -94,7 +94,7 @@ public class controllerFormulaProducto extends HttpServlet {
              request.setAttribute("listMedicamento", med);
              request.setAttribute("listFormula", form);
              try{
-                 request.getRequestDispatcher("CreateFormulaProducto.jsp").include(request, response);
+                 request.getRequestDispatcher("CreateFormulaProducto.jsp").forward(request, response);
              }catch(ServletException | IOException ex){
                  System.out.println("Error en registrar"+ex.getMessage());
              }
@@ -104,7 +104,7 @@ public class controllerFormulaProducto extends HttpServlet {
 
     private void update(HttpServletRequest request, HttpServletResponse response) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
-        int idformproduc  = Integer.parseInt("id");
+        int idformproduc  = Integer.parseInt(request.getParameter("id"));
         FormulaProducto fp = (FormulaProducto)sesion.get(FormulaProducto.class, idformproduc);
         if(request.getMethod().equalsIgnoreCase("POST")){
             String cantidad = request.getParameter("cantidad");
@@ -145,16 +145,17 @@ public class controllerFormulaProducto extends HttpServlet {
             request.setAttribute("formula", formu);
             request.setAttribute("edidFP", fp);
             try{
-                request.getRequestDispatcher("UpdateFormulaProducto.jsp").include(request, response);
+                request.getRequestDispatcher("UpdateFormulaProducto.jsp").forward(request, response);
             }catch(ServletException | IOException ex){
-                System.out.println("Error al actualizar"+ex.getMessage());
+                System.out.println("Error al actualizar"+ex.
+                        getMessage());
             }
         }
     }
 
     private void delete(HttpServletRequest request, HttpServletResponse response) {
         Session sesion = HibernateUtil.getSessionFactory().openSession();
-        int id = Integer.parseInt(request.getParameter("idformproducto"));
+        int id = Integer.parseInt(request.getParameter("id"));
         FormulaProducto fp = (FormulaProducto)sesion.get(FormulaProducto.class, id);
         sesion.beginTransaction();
         sesion.delete(fp);

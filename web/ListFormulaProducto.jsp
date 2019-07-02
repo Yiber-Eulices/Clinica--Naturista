@@ -8,20 +8,20 @@
             <div class="col-xs-12 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>A&ntilde;adir una persona.</strong>
+                        <strong>Lista formula medicamento. </strong>
                     </div>
                     <div class="card-body card-block">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                            <caption>Lista Personas</caption>
+                            <caption>Lista</caption>
                             <thead>
                                 <tr>
-                                    <td>Cantidad: </td>
-                                    <td>Precio/U: </td>
-                                    <td>Iva: </td>
-                                    <td>Dosis: </td>
-                                    <td>Formula: </td>
-                                    <td>Medicamento: </td>
-                                    <td>Acciones: </td>
+                                    <th>Cantidad </th>
+                                    <th>Precio/U </th>
+                                    <th>Iva </th>
+                                    <th>Dosis </th>
+                                    <th>Formula </th>
+                                    <th>Medicamento </th>
+                                    <th>Acciones </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,8 +35,8 @@
                                 <td><%=fp.getIdformula().getDescripcion() %></td>
                                 <td><%=fp.getIdproducto().getNombre() %></td>
                                 <td><div class="card-body">
-                                        <a href="FormulaProducto?a=update&id=<%=fp.getIdformproducto()%>">Editar</a>
-                                        <a href="FormulaProducto?a=delete&id=<%=fp.getIdformproducto()%>">Eliminar</a>
+                                        <a href="FormulaProducto.do?a=update&id=<%=fp.getIdformproducto()%>">Editar</a>
+                                        <a href="FormulaProducto.do?a=delete&id=<%=fp.getIdformproducto()%>">Eliminar</a>
                                 </div></td>
                                 <%}%>
                             </tbody>

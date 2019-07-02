@@ -1,26 +1,55 @@
-<%-- 
-    Document   : LugarAtencion
-    Created on : 28/06/2019, 12:52:59 AM
-    Author     : Asus
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+<%@include file="Header.jsp" %>
+<div class="content">
         <h1>Lugar Atencion</h1>
         <form action="LugarAtencion.do?a=create" method="post">
-            <label>Nombre:</label>
-            <input name="nombre" type="text"/><br>
-            <label>Direccion:</label>
-            <input name="direccion" type="text"/><br>
-            <label>Ciudad:</label>
-            <input name="ciudad" type="text"/><br>
-            <button type="submit">Guardar</button>
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>A&ntilde;adir lugar antencion.</strong>
+                                
+                            <div class="card-body card-block">
+                                <div class="form-group">
+                                    <label class="form-control-label">* Nombre :</label>
+                                    <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-male"></i></div>
+                                    <input class="form-control" placeholder="Nombre" name="nombre" type="text"/><br>
+                                    </div>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label class="form-control-label">* Direccion :</label>
+                                    <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-male"></i></div>
+                                    <input class="form-control" placeholder="Direccion" name="direccion" type="text"/><br>
+                                    </div>
+                                </div>
+                            
+                            
+                                <div class="form-group">
+                                    <label class="form-control-label">* Ciudad :</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-id-badge"></i></div>
+                                        <input class="form-control" placeholder="Ciudad" name="ciudad" type="text"/><br>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Acciones</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <input type="submit" class="btn btn-outline-primary" value="Guardar">
+                                        <a class="btn btn-outline-warning" href="Home.jsp" role="button">Cancelar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>
+<%@include file="Footer.jsp" %>
