@@ -266,7 +266,7 @@ public class controllerCita extends HttpServlet {
         }
         request.setAttribute("ListaCita", lista);
         try{
-            request.getRequestDispatcher("Listacita.jsp").forward(request, response);
+            request.getRequestDispatcher("ListaCita.jsp").forward(request, response);
         }catch(ServletException | IOException ex){
             System.out.println("Error al registrar cita " + ex.getMessage());
         }
