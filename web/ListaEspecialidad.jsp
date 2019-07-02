@@ -1,20 +1,13 @@
-<%-- 
-    Document   : ListaEspecialidad
-    Created on : 28-jun-2019, 14:21:20
-    Author     : ADMIN
---%>
-
-<%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Especialidad"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <table style="margin:0 auto; border: 1px solid black;">
-    <body>
+<%@page import="Modelo.LugarAtencion"%>
+<%@page import="Modelo.Persona"%>
+<%@page import="java.util.ArrayList"%>
+<%@include file="Header.jsp" %>
+<div class="content">
+<!-- Animated -->
+
+    <div class="animated fadeIn">
+        <div class="row">
         <h1>Especialidad</h1>
         
     <tr>
@@ -32,12 +25,14 @@
     <td><%=esp.getDescripcion()%></td>
     
     <td>
-        <button type="submit" onclick="js:window.location.href='especialidad.do?a=update&id=<%=esp.getIdespecialidad()%>'">Actualizar</button> </td>
-    <td><button type="submit" onclick="js:window.location.href='especialidad.do?a=delete&id=<%=esp.getIdespecialidad()%>'">Eliminar</button> </td>
+        <button type="submit" onclick="js:window.location.href='Especialidad.do?a=update&id=<%=esp.getIdespecialidad()%>'">Actualizar</button> </td>
+    <td><button type="submit" onclick="js:window.location.href='Especialidad.do?a=delete&id=<%=esp.getIdespecialidad()%>'">Eliminar</button> </td>
         
     
     </tr>
         <%}%>
         </table>
-    </body>
-</html>
+       </div>
+    </div>
+
+<%@include file="Footer.jsp" %>

@@ -42,11 +42,11 @@ sesionC.invalidate();%>
                     <form action="Persona.do?a=login" method="post">
                         <div class="form-group">
                             <label>Email address</label>
-                            <input type="email" name="txtUser" class="form-control" placeholder="E-Mail">
+                            <input type="email" required="required" name="txtUser" class="form-control" placeholder="E-Mail">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" name="txtPassword"class="form-control" placeholder="Password">
+                            <input type="password" required="required" name="txtPassword"class="form-control" placeholder="Password">
                         </div>
                         <div class="checkbox">
                             <label>

@@ -1,23 +1,14 @@
-<%-- 
-    Document   : UpdateCita
-    Created on : 29-jun-2019, 16:03:14
-    Author     : ADMIN
---%>
-
-<%@page import="Modelo.LugarAtencion"%>
-<%@page import="Modelo.Especialidad"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Modelo.Persona"%>
-<%@page import="Modelo.Persona"%>
 <%@page import="Modelo.Cita"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+<%@page import="Modelo.Especialidad"%>
+<%@page import="Modelo.LugarAtencion"%>
+<%@page import="Modelo.Persona"%>
+<%@page import="java.util.ArrayList"%>
+<%@include file="Header.jsp" %>
+<div class="content">
+<!-- Animated -->
+
+    <div class="animated fadeIn">
+        <div class="row">
         <h1>Actualizar Cita</h1>
         <% Cita cit =  (Cita)request.getAttribute("editarCita"); %>
          <form action="cita.do?a=create" method="post">
@@ -69,5 +60,9 @@
             
              <button type="submit" >Registrar</button>
         </form>
-    </body>
-</html>
+    </div>
+    </div>
+<script>
+    $('.clockpicker').clockpicker();
+</script>
+<%@include file="Footer.jsp" %>

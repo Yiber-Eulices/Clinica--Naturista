@@ -1,19 +1,13 @@
-<%-- 
-    Document   : ListLugarAtencion
-    Created on : 28/06/2019, 02:10:27 PM
-    Author     : Asus
---%>
-
-<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Especialidad"%>
 <%@page import="Modelo.LugarAtencion"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+<%@page import="Modelo.Persona"%>
+<%@page import="java.util.ArrayList"%>
+<%@include file="Header.jsp" %>
+<div class="content">
+<!-- Animated -->
+
+    <div class="animated fadeIn">
+        <div class="row">
         <h1>Hello World!</h1>
         <table>
                 <tr>
@@ -41,5 +35,7 @@
             </tr>
             <%}%>
         </table>
-    </body>
-</html>
+        </div>
+    </div>
+
+<%@include file="Footer.jsp" %>

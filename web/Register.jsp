@@ -58,7 +58,7 @@ sesionC.invalidate();%>
                                     <label class=" form-control-label">* Nombre :</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                                        <input class="form-control" type="text" name="txtNombre" placeholder="Name">
+                                        <input class="form-control" required="required" type="text" name="txtNombre" placeholder="Name">
                                     </div>
                                     <small class="form-text text-muted">ex. Juan Andres</small>
                                 </div>
@@ -66,7 +66,7 @@ sesionC.invalidate();%>
                                     <label class=" form-control-label">* Apellido :</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                                        <input class="form-control" type="text" name="txtApellido" placeholder="Last Name">
+                                        <input class="form-control" required="required" type="text" name="txtApellido" placeholder="Last Name">
                                     </div>
                                     <small class="form-text text-muted">ex. Perez Camargo</small>
                                 </div>
@@ -74,7 +74,7 @@ sesionC.invalidate();%>
                                     <label class=" form-control-label">* Documento de Identificaci&oacute;n :</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-id-badge"></i></div>
-                                        <input class="form-control" type="text" name="txtDocumentid" placeholder="Identification Number">
+                                        <input class="form-control" required="required" type="text" name="txtDocumentid" placeholder="Identification Number">
                                     </div>
                                     <small class="form-text text-muted">ex. 9999999999</small>
                                 </div>
@@ -82,7 +82,7 @@ sesionC.invalidate();%>
                                     <label class=" form-control-label">* Fecha de Nacimiento :</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input class="form-control" type="date" name="txtFechaNacimiento" placeholder="DD/MM/AAAA">
+                                        <input class="form-control" required="required" type="date" name="txtFechaNacimiento" placeholder="DD/MM/AAAA">
                                     </div>
                                     <small class="form-text text-muted">ex. 99/99/9999</small>
                                 </div>
@@ -105,7 +105,7 @@ sesionC.invalidate();%>
                                 <div class="row form-group">
                                         <div class="col col-md-2"><label for="txtRh" class=" form-control-label">* RH :</label></div>
                                         <div class="col-12 col-md-4">
-                                            <select name="txtRh" id="select" class="form-control">
+                                            <select name="txtRh" id="select" required="required" class="form-control">
                                                 <option value="">Please select</option>
                                                 <option value="A+">A+</option>
                                                 <option value="A-">A-</option>
@@ -126,7 +126,7 @@ sesionC.invalidate();%>
                                     <label class=" form-control-label">* Telefono :</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                        <input class="form-control" type="text" name="txtTelefono" placeholder="Telephone" >
+                                        <input class="form-control" type="text" required="required" name="txtTelefono" placeholder="Telephone" >
                                     </div>
                                     <small class="form-text text-muted">ex. (999) 999-9999</small>
                                 </div>
@@ -134,7 +134,7 @@ sesionC.invalidate();%>
                                     <label class=" form-control-label">* Correo :</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-id-card-o"></i></div>
-                                        <input class="form-control" type="email" name="txtCorreo" placeholder="E-Mail">
+                                        <input class="form-control" type="email" required="required" name="txtCorreo" placeholder="E-Mail">
                                     </div>
                                     <small class="form-text text-muted">ex. user@email.com</small>
                                 </div>
@@ -142,11 +142,11 @@ sesionC.invalidate();%>
                                     <label class=" form-control-label">* Password :</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                                        <input class="form-control" type="password" name="txtPassword" placeholder="Password">
+                                        <input class="form-control" type="password" required="required" name="txtPassword" placeholder="Password">
                                     </div>
                                     <small class="form-text text-muted">ex. Mm8$&80Wb-</small>
                                 </div>
-                                <input class="switch-input" type="hidden" value="Paciente" name="txtRol">
+                                <input class="switch-input" required="required" type="hidden" value="Paciente" name="txtRol">
                                 </div><!--/.col-->
                                 <div class="card">
                                     <div class="card-header">
