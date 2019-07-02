@@ -28,6 +28,10 @@
         <servlet-name>controllerEspecialidad</servlet-name>
         <servlet-class>Controlador.controllerEspecialidad</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controllerReporte</servlet-name>
+        <servlet-class>Controlador.controllerReporte</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>controllerPersona</servlet-name>
         <url-pattern>/Persona.do</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>controllerEspecialidad</servlet-name>
         <url-pattern>/Especialidad.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controllerReporte</servlet-name>
+        <url-pattern>/Reporte.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

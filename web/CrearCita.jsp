@@ -26,10 +26,11 @@
             
             <select name="doctor" required="required">
                 <option value="">Seleccione</option>
-            <% ArrayList<Persona> doc = (ArrayList) request.getAttribute("listaDoctor"); %>
-                <% for(Persona doct: doc) {%>
+                <% ArrayList<Persona> doc = (ArrayList) request.getAttribute("listaDoctor"); %>
+                <% for(Persona doct: doc) {
+                if (doct.getRol().equals("medico")){ %>
                 <option value="<%=doct.getIdpersona()%>"><%=doct.getNombre()%></option>
-                <%}%>
+                <%}}%>
             </select>
             
             <select name="paciente" required="required">
