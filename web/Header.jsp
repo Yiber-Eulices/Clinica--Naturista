@@ -38,7 +38,7 @@
     <script src="js/fullcalendar.min.js" type="text/javascript"></script>
     <script src="js/es.js" type="text/javascript"></script><!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
     
     <link href="css/bootstrap-clockpicker.css" rel="stylesheet" type="text/css"/>
     <script src="js/bootstrap-clockpicker.js" type="text/javascript"></script>
